@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { DeveloperService } from '../developer.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-developer-edit',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DeveloperEditComponent implements OnInit {
 
-  constructor() { }
+  @Input() devData:any = { name: '', country: '', est: new Date(), games: [], logoUrl: ''};
+
+  constructor(public rest:DeveloperService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
+    this.rest.getDeveloper(this.route.snapshot.params['id']).subscribe((data: {}) => {
+      console.log(data);
+      this.devData = data;
+    });
+  }
+
+  updateDeveloper() {
+    this.rest.updateDeveloper(this.route.snapshot.params['id'], this.devData).subscribe((result) => {
+      this.router.navigate(['/game-details/'+result._id]);
+    }, (err) => {
+      console.log(err);
+    });
   }
 
 }

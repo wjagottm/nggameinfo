@@ -9,7 +9,7 @@ import { TagInputModule } from 'ngx-chips';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MyNavComponent } from './my-nav/my-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatInputModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatCardModule, MatFormFieldModule, MatTableModule, MatProgressSpinnerModule, MatPaginatorModule } from '@angular/material';
+import { MatSelectModule, MatOptionModule, MatToolbarModule, MatInputModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatCardModule, MatFormFieldModule, MatTableModule, MatProgressSpinnerModule, MatPaginatorModule } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -71,6 +71,8 @@ TagInputModule.withDefaults({
     MatTableModule,
     MatProgressSpinnerModule,
     MatPaginatorModule,
+    MatOptionModule,
+    MatSelectModule,
     TagInputModule
   ],
   providers: [],

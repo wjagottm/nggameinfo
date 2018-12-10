@@ -9,11 +9,18 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class DeveloperAddComponent implements OnInit {
 
-  @Input() gameData = { name: '', genres: [], description: "", price: 0, reviews: [], released: Number, characters: [], developer: "", imageUrl: "" };
+  @Input() devData = { name: '', country: '', est: new Date(), games: [], logoUrl: ''};
 
   constructor(public rest:DeveloperService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
   }
 
+  addDeveloper() {
+    this.rest.addDeveloper(this.devData).subscribe((result) => {
+      this.router.navigate(['/developer-details/'+result._id]);
+    }, (err) => {
+      console.log(err);
+    });
+  }
 }

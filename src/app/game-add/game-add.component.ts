@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { GameService } from '../game.service';
+import { DeveloperService } from '../developer.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -12,11 +13,14 @@ export class GameAddComponent implements OnInit {
 
   @Input() gameData = { name: '', genres: [], description: "", price: 0, reviews: [], released: Number, characters: [], developer: "", imageUrl: "" };
 
-  constructor( public rest:GameService, private route: ActivatedRoute, private router: Router) {
+  developers:any = [];
+
+  constructor( public devRest:DeveloperService, public rest:GameService, private route: ActivatedRoute, private router: Router) {
 
    }
 
   ngOnInit() {
+    this.getDevelopers();
   }
 
   addGame() {
@@ -26,4 +30,14 @@ export class GameAddComponent implements OnInit {
       console.log(err);
     });
   }
+
+  getDevelopers() {
+    this.developers = [];
+    this.devRest.getDevelopers().subscribe((data: {}) => {
+      console.log(data);
+      this.developers = data;
+    });
+  }
+
+  
 }

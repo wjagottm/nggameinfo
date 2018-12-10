@@ -35,7 +35,7 @@
         <!-- Title Column -->
         <ng-container matColumnDef="developer">
           <th mat-header-cell *matHeaderCellDef>Developer</th>
-          <td mat-cell *matCellDef="let row">{{row.developer}}</td>
+          <td mat-cell *matCellDef="let row">{{row.developer[0].name}}</td>
         </ng-container>
   
         <!-- State Column -->

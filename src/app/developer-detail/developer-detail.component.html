@@ -1,3 +1,16 @@
-<p>
-  developer-detail works!
-</p>
+<div *ngIf="developer" class="center-content">
+  <h2>{{developer.name | uppercase}} Details</h2>
+  <div>
+    <form class="myForm">
+      <mat-form-field class="full-width" appearance="legacy">
+        <mat-label>Developer country</mat-label>
+        <input matInput placeholder="Developer country" value="{{developer.country}}" disabled>
+      </mat-form-field>
+      <mat-form-field class="full-width" appearance="legacy">
+        <mat-label>Developer founded date</mat-label>
+        <input type="date" matInput placeholder="Developer est" value="{{developer.est | date:'yyyy-MM-dd'}}" disabled>
+      </mat-form-field>
+    </form>
+  </div>
+  <button mat-raised-button color="primary" (click)="editDev(developer._id)">Edit</button>
+</div>

@@ -9,9 +9,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class GameEditComponent implements OnInit {
 
-  @Input() gameData:any = { name: '', genres: [], description: "", price: 0, released: Number, developer: "", imageUrl: "" };
+  @Input() gameData:any = { name: '', genres: [], description: "", price: 0, released: new Date(), developer: "", imageUrl: "" };
 
-  constructor(public rest:GameService, private route: ActivatedRoute, private router: Router) { }
+  developers:any;
+
+  constructor( public rest:GameService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     this.rest.getGame(this.route.snapshot.params['id']).subscribe((data: {}) => {
