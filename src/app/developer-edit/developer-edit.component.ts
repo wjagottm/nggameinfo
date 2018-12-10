@@ -22,7 +22,7 @@ export class DeveloperEditComponent implements OnInit {
 
   updateDeveloper() {
     this.rest.updateDeveloper(this.route.snapshot.params['id'], this.devData).subscribe((result) => {
-      this.router.navigate(['/game-details/'+result._id]);
+      this.router.navigate(['/developer-details/'+result._id]);
     }, (err) => {
       console.log(err);
     });

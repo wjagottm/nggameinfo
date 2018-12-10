@@ -9,7 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class DevelopersComponent implements OnInit {
 
-  games:any = [];
+  developers:any = [];
   displayedColumns: string[] = ['logo', 'name', 'country', 'est', 'details', 'edit', 'delete'];
   resultsLength = 0;
   isLoadingResults = true;
@@ -22,11 +22,11 @@ export class DevelopersComponent implements OnInit {
   }
 
   getDevelopers() {
-    this.games = [];
+    this.developers = [];
     this.rest.getDevelopers().subscribe((data: {}) => {
       console.log(data);
       this.isLoadingResults = false;
-      this.games = data;
+      this.developers = data;
     });
   }
 

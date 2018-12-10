@@ -1,3 +1,24 @@
-<p>
-  character-detail works!
-</p>
+<div *ngIf="character" class="center-content">
+  <h2>{{character.name | uppercase}} Details</h2>
+  <div>
+    <form class="myForm">
+      <mat-form-field class="full-width" appearance="legacy">
+        <mat-label>Character description</mat-label>
+        <input matInput placeholder="Character description" value="{{character.description}}" disabled>
+      </mat-form-field>
+      <mat-form-field class="full-width" appearance="legacy">
+        <mat-label>Character weapons</mat-label>
+        <input matInput placeholder="Character weapons" value="{{character.weapons}}" disabled>
+      </mat-form-field>
+      <mat-form-field class="full-width" appearance="legacy">
+        <mat-label>Character abilties</mat-label>
+        <input matInput placeholder="Character abilties" value="{{character.abilities}}" disabled>
+      </mat-form-field>
+      <mat-form-field class="full-width" appearance="legacy">
+        <mat-label>Game</mat-label>
+        <input matInput placeholder="Character game" value="{{character.game[0].name}}" disabled>
+      </mat-form-field>
+    </form>
+  </div>
+  <button mat-raised-button color="primary" (click)="editChar(character._id)">Edit</button>
+</div>
