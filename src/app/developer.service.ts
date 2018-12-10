@@ -41,6 +41,13 @@ export class DeveloperService {
     );
   }
 
+  addGameToDev ( id, product): Observable<any> {
+    return this.http.post<any>(endpoint + 'developer/game/' + id, JSON.stringify(product), httpOptions).pipe(
+      tap(_ => console.log('added game to developer w/ id=' + product.id)),
+      catchError(this.handleError<any>('addGameToDev'))
+    )
+  }
+
   updateDeveloper (id, product): Observable<any> {
     return this.http.put(endpoint + 'developer/' + id, JSON.stringify(product), httpOptions).pipe(
       tap(_ => console.log(`updated product id=${id}`)),
