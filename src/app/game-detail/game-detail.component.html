@@ -1,3 +1,29 @@
-<p>
-  game-detail works!
-</p>
+<div *ngIf="game" class="center-content">
+    <h2>{{game.name | uppercase}} Details</h2>
+    <div>
+      <form class="myForm">
+        <mat-label>Game genres</mat-label>
+        <mat-form-field class="full-width" appearance="legacy">
+          <mat-label>Game genres</mat-label>
+          <input matInput placeholder="Game description" value="{{game.genres}}" disabled>
+        </mat-form-field>
+        <mat-form-field class="full-width" appearance="legacy">
+          <mat-label>Game description</mat-label>
+          <input matInput placeholder="Game description" value="{{game.description}}" disabled>
+        </mat-form-field>
+        <mat-form-field class="full-width" appearance="legacy">
+          <mat-label>Game price</mat-label>
+          <input matInput placeholder="Game Price" value="{{game.price}}" disabled>
+        </mat-form-field>
+        <mat-form-field class="full-width" appearance="legacy">
+          <mat-label>Game release date</mat-label>
+          <input type="date" matInput placeholder="Game release date" value="{{game.released | date:'yyyy-MM-dd'}}" disabled>
+        </mat-form-field>
+          <mat-form-field class="full-width" appearance="legacy">
+          <mat-label>Game developer</mat-label>
+          <input matInput placeholder="Game developer" value="{{game.developer}}" disabled>
+        </mat-form-field>
+      </form>
+    </div>
+    <button mat-raised-button color="primary" (click)="editGame(game._id)">Edit</button>
+  </div>

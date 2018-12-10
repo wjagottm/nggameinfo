@@ -1,4 +1,4 @@
-<nav  class="navbar navbar-expand-lg navbar-light bg-light">
+<!-- <nav  class="navbar navbar-expand-lg navbar-light bg-light">
     <a  class="navbar-brand"  href="#">Angular CRM</a>
     <button  class="navbar-toggler"  type="button"  data-toggle="collapse"  data-target="#navbarSupportedContent"  aria-controls="navbarSupportedContent"  aria-expanded="false"  aria-label="Toggle navigation">
     <span  class="navbar-toggler-icon"></span>
@@ -6,30 +6,26 @@
 <div  class="collapse navbar-collapse"  id="navbarSupportedContent">
     <ul  class="navbar-nav mr-auto">
         <li  class="nav-item active">
-        <a  class="nav-link"  href="#">Home <span  class="sr-only">(current)</span></a>
+            <a routerLink="/dashboard" class="nav-link"  href="#">Dashboard <span  class="sr-only">(current)</span></a>
         </li>
-        <li  class="nav-item dropdown">
-        <a  class="nav-link dropdown-toggle"  href="#"  id="navbarDropdown"  role="button"  data-toggle="dropdown"  aria-haspopup="true"  aria-expanded="false">
-        Actions
-        </a>
-        <div  class="dropdown-menu"  aria-labelledby="navbarDropdown">
-        <a  class="dropdown-item" [routerLink]="'/accounts'"> Accounts </a>
-        <a  class="dropdown-item" [routerLink]="'/create-account'"> Create Account </a>
-        <div  class="dropdown-divider"></div>
-        <a  class="dropdown-item" [routerLink]="'/contacts'"> Contacts </a>
-        <a  class="dropdown-item" [routerLink]="'/create-contact'"> Create Contact </a>
-        <div  class="dropdown-divider"></div>
-        <a  class="dropdown-item" [routerLink]="'/leads'"> Leads </a>
-        <a  class="dropdown-item" [routerLink]="'/create-lead'"> Create Lead </a>
-        <div  class="dropdown-divider"></div>
-        <a  class="dropdown-item" [routerLink]="'/opportunities'"> Opportunities </a>
-        <a  class="dropdown-item" [routerLink]="'/create-opportunity'"> Create Opportunity </a>
-        </div>
+        <li  class="nav-item active">
+            <a routerLink="/developers" class="nav-link" href="#">Developers <span  class="sr-only">(current)</span></a>
+        </li>
+        <li  class="nav-item active">
+            <a routerLink="/characters" class="nav-link" href="#">Characters <span  class="sr-only">(current)</span></a>
+        </li>
+        <li  class="nav-item active">
+            <a routerLink="/games" class="nav-link" href="#">Games <span  class="sr-only">(current)</span></a>
         </li>
 </ul>
 </div>
-</nav>
-<div  class="container-fluid">
-    <router-outlet></router-outlet>
-</div>
+</nav> -->
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<my-nav></my-nav>
 
