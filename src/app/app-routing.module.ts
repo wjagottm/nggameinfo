@@ -18,9 +18,14 @@ import { GameEditComponent } from './game-edit/game-edit.component';
 import { CharacterEditComponent } from './character-edit/character-edit.component';
 import { DeveloperEditComponent } from './developer-edit/developer-edit.component';
 
+import { UserRegisterComponent } from './user-register/user-register.component';
+import { UserLoginComponent } from './user-login/user-login.component';
+
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full'},
   { path: 'dashboard', component: DashboardComponent },
+  { path: 'login', component: UserLoginComponent },
+  { path: 'register', component: UserRegisterComponent },
   { path: 'game-add', component: GameAddComponent},
   { path: 'character-add', component: CharacterAddComponent},
   { path: 'developer-add', component: DeveloperAddComponent},

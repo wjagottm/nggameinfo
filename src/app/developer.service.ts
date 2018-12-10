@@ -24,7 +24,7 @@ export class DeveloperService {
   }
 
   getDevelopers(): Observable<any> {
-    return this.http.get(endpoint + 'developers').pipe(
+    return this.http.get(endpoint + 'developer').pipe(
       map(this.extractData));
   }
 

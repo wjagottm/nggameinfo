@@ -24,7 +24,7 @@ export class GameService {
   }
 
   getGames(): Observable<any> {
-    return this.http.get(endpoint + 'games').pipe(
+    return this.http.get(endpoint + 'game').pipe(
       map(this.extractData));
   }
 

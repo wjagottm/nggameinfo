@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 
 import { TagInputModule } from 'ngx-chips';
@@ -26,6 +26,10 @@ import { DeveloperEditComponent } from './developer-edit/developer-edit.componen
 import { DeveloperAddComponent } from './developer-add/developer-add.component';
 import { CharacterEditComponent } from './character-edit/character-edit.component';
 import { CharacterAddComponent } from './character-add/character-add.component';
+import { UserLoginComponent } from './user-login/user-login.component';
+import { UserRegisterComponent } from './user-register/user-register.component';
+import { InterceptService} from './intercept.service';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 TagInputModule.withDefaults({
   tagInput: {
@@ -51,7 +55,9 @@ TagInputModule.withDefaults({
     DeveloperEditComponent,
     DeveloperAddComponent,
     CharacterEditComponent,
-    CharacterAddComponent
+    CharacterAddComponent,
+    UserLoginComponent,
+    UserRegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -73,9 +79,15 @@ TagInputModule.withDefaults({
     MatPaginatorModule,
     MatOptionModule,
     MatSelectModule,
-    TagInputModule
+    TagInputModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [InterceptService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: InterceptService,
+      multi: true
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -24,7 +24,7 @@ export class CharacterService {
   }
 
   getCharacters(): Observable<any> {
-    return this.http.get(endpoint + 'characters').pipe(
+    return this.http.get(endpoint + 'character').pipe(
       map(this.extractData));
   }
 
