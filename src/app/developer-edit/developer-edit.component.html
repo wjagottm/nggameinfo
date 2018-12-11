@@ -1,0 +1,24 @@
+<div class="center-content">
+  <h2>Game edit</h2>
+  <div>
+    <form class="myForm">
+      <mat-form-field class="full-width" appearance="legacy">
+        <mat-label>Developer name</mat-label>
+        <input [(ngModel)]="devData.name" matInput placeholder="Developer name" [ngModelOptions]="{standalone: true}">
+      </mat-form-field>
+      <mat-form-field class="full-width" appearance="legacy">
+        <mat-label>Developer Country</mat-label>
+        <input [(ngModel)]="devData.country" matInput placeholder="Developer Country" [ngModelOptions]="{standalone: true}">
+      </mat-form-field>
+      <mat-form-field class="full-width" appearance="legacy">
+        <mat-label>Developer est</mat-label>
+        <input [ngModel]="devData.est | date:'yyyy-MM-dd'" (ngModelChange)="devData.est=$event" type="date" matInput placeholder="Developer est" [ngModelOptions]="{standalone: true}">
+      </mat-form-field>
+      <mat-form-field class="full-width" appearance="legacy">
+        <mat-label>Developer image url</mat-label>
+        <input [(ngModel)]="devData.logoUrl" matInput placeholder="Developer imageUrl" [ngModelOptions]="{standalone: true}">
+      </mat-form-field>
+    </form>
+  </div>
+  <button mat-raised-button color="primary" (click)="updateDeveloper()">Save</button>
+</div>

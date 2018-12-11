@@ -1,0 +1,30 @@
+<div class="center-content">
+    <h2>Game edit</h2>
+    <div>
+      <form class="myForm">
+        <mat-form-field class="full-width" appearance="legacy">
+          <mat-label>Game name</mat-label>
+          <input [(ngModel)]="gameData.name" matInput placeholder="Game name" [ngModelOptions]="{standalone: true}">
+        </mat-form-field>
+        <mat-label>Game genres</mat-label>
+        <tag-input [(ngModel)]='gameData.genres' theme='minimal' matInput [editable]='true' (onTagEdited)="onTagEdited($event)" [ngModelOptions]="{standalone: true}"></tag-input>
+          <mat-form-field class="full-width" appearance="legacy">
+          <mat-label>Game description</mat-label>
+          <input [(ngModel)]="gameData.description" matInput placeholder="Game description" [ngModelOptions]="{standalone: true}">
+        </mat-form-field>
+          <mat-form-field class="full-width" appearance="legacy">
+          <mat-label>Game price</mat-label>
+          <input [(ngModel)]="gameData.price" matInput placeholder="Game Price" [ngModelOptions]="{standalone: true}">
+        </mat-form-field>
+        <mat-form-field class="full-width" appearance="legacy">
+          <mat-label>Game release date</mat-label>
+          <input [ngModel]="gameData.released | date:'yyyy-MM-dd'" (ngModelChange)="gameData.released=$event" type="date" matInput placeholder="Game release date" [ngModelOptions]="{standalone: true}">
+        </mat-form-field>
+          <mat-form-field class="full-width" appearance="legacy">
+          <mat-label>Game image url</mat-label>
+          <input [(ngModel)]="gameData.imageUrl" matInput placeholder="Game imageUrl" [ngModelOptions]="{standalone: true}">
+        </mat-form-field>
+      </form>
+    </div>
+    <button mat-raised-button color="primary" (click)="updateGame()">Save</button>
+  </div>
