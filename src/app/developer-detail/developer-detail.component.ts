@@ -10,12 +10,17 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class DeveloperDetailComponent implements OnInit {
 
   developer:any;
+  displayedColumns: string[] = ['image', 'name', 'developer', 'released', 'details', 'edit', 'delete'];
+  resultsLength = 0;
+  isLoadingResults = true;
+  isRateLimitReached = false;
 
   constructor(public rest:DeveloperService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     this.rest.getDeveloper(this.route.snapshot.params['id']).subscribe((data: {}) => {
       console.log(data);
+      this.isLoadingResults = false;
       this.developer = data;
     });
   }

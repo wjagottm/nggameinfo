@@ -27,6 +27,7 @@
         <a mat-raised-button routerLink="/register">Register</a>
       </div>
       <div *ngIf="user" style="position: absolute; right: 5rem;">
+        Welcome {{username}}!
         <button mat-raised-button style="margin-right: 5px;" color="warn" (click)="logout()">Logout</button>
       </div>
     </mat-toolbar>

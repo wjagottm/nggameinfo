@@ -13,6 +13,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class MyNavComponent {
 
   user;
+  username:any = '';
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
@@ -21,6 +22,7 @@ export class MyNavComponent {
     
   ngOnInit() {
     this.checkLogin();
+    this.username = localStorage.getItem('username')
   }
 
   constructor(private rest: UserService, private breakpointObserver: BreakpointObserver, private route: ActivatedRoute, private router: Router) {

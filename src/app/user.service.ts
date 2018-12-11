@@ -4,7 +4,7 @@ import { Observable, of, observable } from 'rxjs';
 import { map, catchError, tap } from 'rxjs/operators';
 import * as moment from 'moment';
 
-const endpoint = 'http://localhost:3000/api/';
+const endpoint = 'https://gameinfo-api.herokuapp.com/api/';
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json'

@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 import { Observable, of } from 'rxjs';
 import { map, catchError, tap } from 'rxjs/operators';
 
-const endpoint = 'http://localhost:3000/api/';
+const endpoint = 'https://gameinfo-api.herokuapp.com/api/';
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json'
@@ -15,6 +15,7 @@ const httpOptions = {
 })
 
 export class DeveloperService {
+  game:any = {};
 
   constructor(private http: HttpClient) { }
 

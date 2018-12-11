@@ -11,12 +11,17 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class GameDetailComponent implements OnInit {
 
   game:any;
+  resultsLength = 0;
+  displayedColumns: string[] = ['image', 'name', 'game', 'details', 'edit', 'delete'];
+  isLoadingResults = true;
+  isRateLimitReached = false;
 
   constructor(public rest:GameService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     this.rest.getGame(this.route.snapshot.params['id']).subscribe((data: {}) => {
       console.log(data);
+      this.isLoadingResults = false;
       this.game = data;
     });
   }

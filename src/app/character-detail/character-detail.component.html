@@ -1,6 +1,9 @@
 <div *ngIf="character" class="center-content">
   <h2>{{character.name | uppercase}} Details</h2>
   <div>
+    <img src="{{character.imageUrl}}" width="300rem">
+  </div>
+  <div>
     <form class="myForm">
       <mat-form-field class="full-width" appearance="legacy">
         <mat-label>Character description</mat-label>
