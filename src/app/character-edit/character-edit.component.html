@@ -7,10 +7,10 @@
         <input [(ngModel)]="characterData.name" matInput placeholder="Game name" [ngModelOptions]="{standalone: true}">
       </mat-form-field>
       <mat-label>Character weapons</mat-label>
-      <tag-input [(ngModel)]='characterData.weapons' class="full-width" theme='minimal' matInput [editable]='true' (onTagEdited)="onTagEdited($event)" [ngModelOptions]="{standalone: true}"></tag-input>
+      <tag-input [(ngModel)]='characterData.weapons' class="full-width" theme='minimal' matInput [editable]='true' [ngModelOptions]="{standalone: true}"></tag-input>
       
       <mat-label>Character abilities</mat-label>
-      <tag-input [(ngModel)]='characterData.abilities' class="full-width" theme='minimal' matInput [editable]='true' (onTagEdited)="onTagEdited($event)" [ngModelOptions]="{standalone: true}"></tag-input>
+      <tag-input [(ngModel)]='characterData.abilities' class="full-width" theme='minimal' matInput [editable]='true' [ngModelOptions]="{standalone: true}"></tag-input>
       <mat-form-field class="full-width" appearance="legacy">
         <mat-label>Character description</mat-label>
         <input [(ngModel)]="characterData.description" matInput placeholder="Character description" [ngModelOptions]="{standalone: true}">

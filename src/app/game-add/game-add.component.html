@@ -7,7 +7,7 @@
         <input [(ngModel)]="gameData.name" matInput placeholder="Game name" [ngModelOptions]="{standalone: true}">
       </mat-form-field>
       <mat-label>Game genres</mat-label>
-      <tag-input [(ngModel)]='gameData.genres' class="full-width" theme='minimal' matInput [editable]='true' (onTagEdited)="onTagEdited($event)" [ngModelOptions]="{standalone: true}"></tag-input>
+      <tag-input [(ngModel)]='gameData.genres' class="full-width" theme='minimal' matInput [editable]='true' [ngModelOptions]="{standalone: true}"></tag-input>
       <mat-form-field class="full-width" appearance="legacy">
         <mat-label>Game description</mat-label>
         <input [(ngModel)]="gameData.description" matInput placeholder="Game description" [ngModelOptions]="{standalone: true}">
@@ -21,7 +21,7 @@
         <input [(ngModel)]="gameData.released" type="date" matInput placeholder="Game release date" [ngModelOptions]="{standalone: true}">
       </mat-form-field>
       <mat-form-field class="full-width" appearance="legacy">
-        <mat-select placeholder="Developers" [(ngModel)]="gameData.developer" name="developer" (change)="changeDeveloper($event.value)">
+        <mat-select placeholder="Developers" [(ngModel)]="gameData.developer" name="developer">
           <mat-option *ngFor="let dev of developers; let i = index;" [value]="dev._id">
             {{dev.name}}
           </mat-option>
