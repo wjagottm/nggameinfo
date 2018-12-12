@@ -10,6 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class DevelopersComponent implements OnInit {
 
   developers:any = [];
+  username:any;
   displayedColumns: string[] = ['logo', 'name', 'country', 'est', 'details', 'edit', 'delete'];
   resultsLength = 0;
   isLoadingResults = true;
@@ -19,6 +20,7 @@ export class DevelopersComponent implements OnInit {
 
   ngOnInit() {
     this.getDevelopers();
+    this.username = localStorage.getItem('username')
   }
 
   getDevelopers() {
