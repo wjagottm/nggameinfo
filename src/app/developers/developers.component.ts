@@ -11,7 +11,7 @@ export class DevelopersComponent implements OnInit {
 
   developers:any = [];
   user:any;
-  displayedColumns: string[] = ['logo', 'name', 'country', 'est', 'details', 'edit', 'delete'];
+  displayedColumns: string[];
   resultsLength = 0;
   isLoadingResults = true;
   isRateLimitReached = false;
@@ -26,8 +26,10 @@ export class DevelopersComponent implements OnInit {
   checkLogin() {
     if (localStorage.getItem('username') !== null) {
       this.user = true;
+      this.displayedColumns = ['logo', 'name', 'country', 'est', 'details', 'edit', 'delete'];
     } else {
       this.user = false;
+      this.displayedColumns = ['logo', 'name', 'country', 'est', 'details'];
     }
   }
 

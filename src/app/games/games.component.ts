@@ -12,7 +12,7 @@ export class GamesComponent implements OnInit {
 
   games: any = [];
   user: any;
-  displayedColumns: string[] = ['image', 'name', 'developer', 'released', 'details', 'edit', 'delete'];
+  displayedColumns: string[];
   resultsLength = 0;
   isLoadingResults = true;
   isRateLimitReached = false;
@@ -36,8 +36,10 @@ export class GamesComponent implements OnInit {
   checkLogin() {
     if (localStorage.getItem('username') !== null) {
       this.user = true;
+      this.displayedColumns = ['image', 'name', 'developer', 'released', 'details', 'edit', 'delete'];
     } else {
       this.user = false;
+      this.displayedColumns = ['image', 'name', 'developer', 'released', 'details'];
     }
   }
 

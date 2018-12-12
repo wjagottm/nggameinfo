@@ -11,7 +11,7 @@ export class CharactersComponent implements OnInit {
   
   characters: any = [];
   user: any;
-  displayedColumns: string[] = ['image', 'name', 'game', 'details', 'edit', 'delete'];
+  displayedColumns: string[];
   resultsLength = 0;
   isLoadingResults = true;
   isRateLimitReached = false;
@@ -26,8 +26,10 @@ export class CharactersComponent implements OnInit {
   checkLogin() {
     if (localStorage.getItem('username') !== null) {
       this.user = true;
+      this.displayedColumns = ['image', 'name', 'game', 'details', 'edit', 'delete'];
     } else {
       this.user = false;
+      this.displayedColumns = ['image', 'name', 'game', 'details'];
     }
   }
 
