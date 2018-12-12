@@ -9,7 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class DeveloperEditComponent implements OnInit {
 
-  @Input() devData:any = { name: '', country: '', est: new Date(), games: [], logoUrl: ''};
+  @Input() devData:any = { name: '', country: '', est: new Date(), logoUrl: ''};
 
   constructor(public rest:DeveloperService, private route: ActivatedRoute, private router: Router) { }
 
