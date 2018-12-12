@@ -11,7 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class GamesComponent implements OnInit {
 
   games: any = [];
-  username: any;
+  user: any;
   displayedColumns: string[] = ['image', 'name', 'developer', 'released', 'details', 'edit', 'delete'];
   resultsLength = 0;
   isLoadingResults = true;
@@ -21,7 +21,7 @@ export class GamesComponent implements OnInit {
 
   ngOnInit() {
     this.getGames();
-    this.username = localStorage.getItem('username')
+    this.checkLogin();
   }
 
   getGames() {
@@ -31,6 +31,14 @@ export class GamesComponent implements OnInit {
       this.isLoadingResults = false;
       this.games = data;
     });
+  }
+
+  checkLogin() {
+    if (localStorage.getItem('username') !== null) {
+      this.user = true;
+    } else {
+      this.user = false;
+    }
   }
 
   add() {

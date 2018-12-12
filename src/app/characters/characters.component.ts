@@ -10,7 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class CharactersComponent implements OnInit {
   
   characters: any = [];
-  username: any;
+  user: any;
   displayedColumns: string[] = ['image', 'name', 'game', 'details', 'edit', 'delete'];
   resultsLength = 0;
   isLoadingResults = true;
@@ -20,7 +20,15 @@ export class CharactersComponent implements OnInit {
 
   ngOnInit() {
     this.getCharacters();
-    this.username = localStorage.getItem('username')
+    this.checkLogin();
+  }
+
+  checkLogin() {
+    if (localStorage.getItem('username') !== null) {
+      this.user = true;
+    } else {
+      this.user = false;
+    }
   }
 
   getCharacters() {
